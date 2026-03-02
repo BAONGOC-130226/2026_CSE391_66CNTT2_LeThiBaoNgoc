@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Contact Form Flexbox</title>
+
+<style>
+body{
+    background:#e5e5e5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 900px;
+    margin: 40px auto;
+    background:#f3f3f3;
+    border:2px solid #333;
+    padding:30px;
+}
+
+/* Tiêu đề */
+.container h2{
+    color:#555;
+    margin-bottom:25px;
+}
+
+/* Dòng 2 input ngang */
+.row{
+    display:flex;
+    gap:20px;
+    margin-bottom:15px;
+}
+
+/* Input + textarea chung style */
+input, textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:14px;
+    width:100%;
+    box-sizing:border-box;
+}
+
+textarea{
+    width:100%;
+    height:260px;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    font-size:14px;
+    resize: vertical;   /* cho kéo dọc */
+    box-sizing:border-box;
+}
+/* Dòng dưới cùng */
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:15px;
+}
+
+/* Button */
+button{
+    background:#69b3e7;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#4da0da;
+}
+
+/* Dòng chữ mờ */
+.note{
+    color:#999;
+    font-size:14px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Get in touch with us by filling contact form below</h2>
+
+    <form>
+
+        <div class="row">
+            <input type="text" placeholder="* Enter your full name">
+            <input type="email" placeholder="* Enter your email address">
+        </div>
+
+        <div class="row">
+            <input type="text" placeholder="Enter your subject">
+        </div>
+
+        <div class="row">
+            <textarea placeholder="* Your message here..."></textarea>
+        </div>
+
+        <div class="bottom">
+            <button type="submit">Send message</button>
+            <span class="note">
+                * Please fill all required form field, thanks!
+            </span>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
