@@ -1,0 +1,106 @@
+```html id="evx91q"
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>DOM Events</title>
+
+<style>
+.container{
+    padding:20px;
+    background:#ddd;
+}
+
+.box{
+    padding:20px;
+    background:#aaa;
+}
+
+ul li{
+    cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Demo DOM Events</h2>
+
+<!-- 1. Click Event -->
+<button id="btn">Click tôi</button>
+
+<br><br>
+
+<!-- 2. Keyboard Event -->
+<input type="text" id="keyboard" placeholder="Nhấn phím bất kỳ">
+
+<br><br>
+
+<!-- 3. Form Submit -->
+<form id="form">
+<input type="text" placeholder="Nhập tên">
+<button type="submit">Gửi</button>
+</form>
+
+<br>
+
+<!-- 4. Event Bubbling -->
+<div class="container" id="container">
+    Container
+    <div class="box" id="box">
+        Box
+    </div>
+</div>
+
+<br>
+
+<!-- 5. Event Delegation -->
+<ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<script>
+
+// 1. Click event
+document.getElementById("btn").addEventListener("click",function(){
+    alert("Bạn đã click nút")
+})
+
+
+// 2. Keyboard event
+document.getElementById("keyboard").addEventListener("keydown",function(e){
+    console.log("Phím vừa nhấn:", e.key)
+})
+
+
+// 3. Form submit
+document.getElementById("form").addEventListener("submit",function(e){
+    e.preventDefault()
+    alert("Form đã gửi nhưng không reload trang")
+})
+
+
+// 4. Event Bubbling
+document.getElementById("box").addEventListener("click",function(){
+    alert("Click vào BOX")
+})
+
+document.getElementById("container").addEventListener("click",function(){
+    alert("Click vào CONTAINER")
+})
+
+
+// 5. Event Delegation
+document.getElementById("list").addEventListener("click",function(e){
+    if(e.target.tagName === "LI"){
+        alert("Bạn chọn: " + e.target.textContent)
+    }
+})
+
+</script>
+
+</body>
+</html>
+```

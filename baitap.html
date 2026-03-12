@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài tập DOM</title>
+</head>
+
+<body>
+
+<h1 id="title">Tiêu đề ban đầu</h1>
+
+<div id="content"></div>
+
+<ul id="list">
+    <li>Phần tử 1</li>
+    <li id="deleteItem">Phần tử sẽ bị xóa</li>
+</ul>
+
+<button onclick="changeTitle()">Đổi tiêu đề</button>
+<button onclick="addHTML()">Thêm HTML</button>
+<button onclick="addItem()">Thêm LI</button>
+<button onclick="removeItem()">Xóa phần tử</button>
+
+<script>
+
+function changeTitle(){
+    document.getElementById("title").textContent = "Tiêu đề đã được thay đổi";
+}
+
+function addHTML(){
+    document.getElementById("content").innerHTML = "<p>Đây là đoạn HTML được thêm bằng innerHTML</p>";
+}
+
+function addItem(){
+    let li = document.createElement("li");
+    li.textContent = "Phần tử mới";
+    document.getElementById("list").append(li);
+}
+
+function removeItem(){
+    document.getElementById("deleteItem").remove();
+}
+
+</script>
+
+</body>
+</html>

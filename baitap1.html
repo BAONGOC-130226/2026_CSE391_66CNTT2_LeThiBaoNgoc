@@ -1,0 +1,71 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Phản hồi tương tác người dùng</title>
+
+<style>
+
+body{
+    font-family: Arial;
+}
+
+.box{
+    width:200px;
+    height:100px;
+    background:lightgray;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:15px;
+}
+
+.changeColor{
+    background:yellow;
+}
+
+</style>
+
+</head>
+<body>
+
+<h2 id="text">Chưa click</h2>
+
+<div class="box" id="box">
+Di chuột vào đây
+</div>
+
+<button id="btn">Click tôi</button>
+
+<script>
+
+let btn = document.getElementById("btn")
+let text = document.getElementById("text")
+let box = document.getElementById("box")
+
+// gán sự kiện click
+btn.addEventListener("click", function(){
+    text.textContent = "Bạn đã click nút!"
+})
+
+// thêm listener thứ 2 cho cùng nút
+btn.addEventListener("click", function(){
+    document.body.classList.toggle("changeColor")
+})
+
+// mouseenter
+box.addEventListener("mouseenter", function(){
+    box.textContent = "Chuột đang ở trong box"
+})
+
+// mouseleave
+box.addEventListener("mouseleave", function(){
+    box.textContent = "Chuột đã rời box"
+})
+
+</script>
+
+</body>
+</html>
+```

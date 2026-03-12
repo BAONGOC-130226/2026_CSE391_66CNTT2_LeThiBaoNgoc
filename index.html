@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>DOM Selector</title>
+
+<style>
+.box{
+padding:10px;
+margin:5px;
+background:lightblue;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2 id="title">Bài tập DOM</h2>
+
+<p class="text">Đây là đoạn văn 1</p>
+<p class="text">Đây là đoạn văn 2</p>
+<p class="text">Đây là đoạn văn 3</p>
+
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+
+<script>
+
+
+//  querySelector (lấy phần tử đầu tiên)
+const firstText = document.querySelector(".text")
+console.log("querySelector:", firstText)
+
+
+// querySelectorAll (lấy danh sách phần tử)
+const allText = document.querySelectorAll(".text")
+console.log("querySelectorAll:", allText)
+
+
+// getElementById
+const title = document.getElementById("title")
+console.log("getElementById:", title)
+
+
+// thử duyệt danh sách
+allText.forEach(function(item){
+console.log("Nội dung:", item.innerText)
+})
+
+</script>
+
+</body>
+</html>
